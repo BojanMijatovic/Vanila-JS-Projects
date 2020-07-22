@@ -1,21 +1,31 @@
 
-// const list = ['Ted', 'Liz', 'Alex', 'Bob'];
-// console.log(list[list.length - 1]);
+// const name = 'Alex Jordan';
+// console.log(name.toUpperCase());
 
-// list[4] = 'new friend';
-// console.log(list);
+// const person = {
+//   name: 'Peter',
+//   greet() {
+//     return `Hello ${this.name.toLowerCase()}`
+//   }
+// }
+// console.log(person.greet());
 
-// list[4] = 'Freddy';
-// console.log(list);
 
-function hello() {
-  return console.log(`Welcome`);
+// const index = name.toLowerCase().indexOf('j'); // combine methods
+// console.log(index);
+
+
+const names = ['Rex', 'Ted', 'Bob'];
+const lastName = 'Reyes';
+
+// const total = [...names, ...lastNames];
+// console.log(total);
+
+const fullName = [];
+
+for (var i = 0; i < names.length; i++) {
+  let total = ` ${names[i]} ${lastName}`
+  fullName.push(total);
 }
 
-hello();
-
-function helloGest(name) {
-  return console.log(`Welcome ${name}`);
-}
-
-helloGest('Bob');
+console.log(fullName);
