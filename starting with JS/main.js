@@ -1,31 +1,16 @@
+const gas = [10, 22, 45];
+const food = [66, 1, 31];
 
-// const name = 'Alex Jordan';
-// console.log(name.toUpperCase());
-
-// const person = {
-//   name: 'Peter',
-//   greet() {
-//     return `Hello ${this.name.toLowerCase()}`
-//   }
-// }
-// console.log(person.greet());
-
-
-// const index = name.toLowerCase().indexOf('j'); // combine methods
-// console.log(index);
-
-
-const names = ['Rex', 'Ted', 'Bob'];
-const lastName = 'Reyes';
-
-// const total = [...names, ...lastNames];
-// console.log(total);
-
-const fullName = [];
-
-for (var i = 0; i < names.length; i++) {
-  let total = ` ${names[i]} ${lastName}`
-  fullName.push(total);
+function calcTotal(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
 }
 
-console.log(fullName);
+let g = calcTotal(gas);
+let f = calcTotal(food);
+
+let totalExpenses = g + f;
+console.log(`Total expenses are ${totalExpenses} $`);
