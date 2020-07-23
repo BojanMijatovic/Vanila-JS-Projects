@@ -1,16 +1,20 @@
-const gas = [10, 22, 45];
-const food = [66, 1, 31];
+const list = ['books', 'cars', 'fruits', 'drinks', 'beer'];
 
-function calcTotal(arr) {
-  let total = 0;
-  for (let i = 0; i < arr.length; i++) {
-    total += arr[i];
-  }
-  return total;
-}
+const people = [
+  { name: 'Alex', job: 'developer', age: 32 },
+  { name: 'Tim', job: 'solider', age: 25 },
+  { name: 'Rex', job: 'manager', age: 40 }
+]
 
-let g = calcTotal(gas);
-let f = calcTotal(food);
+const peopleAge = people.map(function (person) {
+  return person.age;
+})
 
-let totalExpenses = g + f;
-console.log(`Total expenses are ${totalExpenses} $`);
+console.log(peopleAge);
+
+
+const showNames = people.map(function (person) {
+  let test = document.createElement('p');
+  test.innerText = `Name: ${person.name}`;
+  document.body.append(test);
+})
