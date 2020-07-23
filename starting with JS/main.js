@@ -40,3 +40,14 @@
 // console.log(date.toDateString());
 
 // document.body.append(date.toDateString())
+
+const btn = document.getElementById('btn');
+
+const subHeadings = document.getElementsByTagName('h2');
+console.log(subHeadings);
+
+const list = document.querySelectorAll('.list');
+
+list.forEach(function (item) {
+  item.style.color = 'red';
+})
