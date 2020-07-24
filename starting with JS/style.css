@@ -1,0 +1,15 @@
+ .list {
+   color: teal;
+   font-size: 18px;
+   list-style: none;
+ }
+
+ .subtitle {
+   font-size: 22px;
+   color: slateblue;
+   font-weight: 800;
+ }
+
+ .addNew {
+   background-color: red;
+ }
