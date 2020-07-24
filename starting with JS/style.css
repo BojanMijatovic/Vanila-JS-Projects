@@ -13,3 +13,8 @@
  .addNew {
    background-color: red;
  }
+
+ .list-item {
+   color: navy;
+   font-size: 20px;
+ }
