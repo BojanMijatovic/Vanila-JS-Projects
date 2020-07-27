@@ -74,6 +74,11 @@ const menu = [
 ];
 
 
+
+const sectionCenter = document.querySelector('.section-center');
+const containerBtn = document.querySelector('.btn-container');
+
+//  display single item function
 function displayMenuItems(menuItem) {
   let displayMenu = menuItem.map(function (item) {
     return `  <article class="menu-item">
@@ -94,7 +99,37 @@ function displayMenuItems(menuItem) {
 }
 
 
-const sectionCenter = document.querySelector('.section-center');
+
+
+
 window.addEventListener('DOMContentLoaded', function () {
   displayMenuItems(menu);
+  const categories = menu.reduce(function (values, item) {
+    if (!values.includes(item.category)) {
+      values.push(item.category)
+    }
+    return values;
+  }, ['all']);
+  const categoryBtn = categories.map(function (category) {
+    return ` <button class="filter-btn" type="button" data-id="${category}">${category}</button>`
+  }).join('');
+  containerBtn.innerHTML = categoryBtn;
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  //  filter btns
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function (menuItem) {
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      })
+      if (category === 'all') {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCategory);
+      }
+    })
+  })
 })
